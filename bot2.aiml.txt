@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<category> 
+      <pattern>HOLA</pattern>
+      <template> 
+        <random> 
+          <li>Hola.</li>
+          <li>Saludos.</li>
+          <li>Hola, como va todo?</li>
+          <li>Hola, que hay?</li>
+          <li>Saludos,en que puedo ayudarte?</li>
+          <li>Que tal?</li>
+          <li>Buenas.</li>
+        </random>
+      </template>
+    </category>
+    
+     <category>
+        <pattern>quien eres ^</pattern>
+        <template> sorpresa!
+            <button>
+                <text>quieres conocerme?</text>
+                <postback>conoceme</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>conoceme</pattern>
+        <template>soy un bot! Me llamo sara, a que te alegras de conocerme?</template>
+    </category>
+    
+    <category>
+        <pattern>yo me llamo *</pattern>
+        <template>hola <set name= "username"><star/></set></template>
+    </category>
+    
+    <category>
+        <pattern>te acuerdas como me llamo ^</pattern>
+        <template>claro <get name="username"/></template>
+    </category>
+    
+    <category>
+        <pattern>^ me dejas verte ^</pattern>
+        <template> claro, pero no me ha dado tiempo a arreglarme.
+            <video>https://pandorabots.com/mitsuku/img/mitsuku.mp4</video>
+        </template>
+    </category>
+    
+     <category> 
+      <pattern>DE DONDE ERES </pattern>
+      <template> 
+        soy del ciber espacio y tu
+      </template>
+    </category>
+    <category>
+        <pattern>malaga</pattern>
+        <that>soy del ciber espacio y tu</that>
+        <template>Bonita ciudad</template>
+    </category>
+    
+    
+    <category>
+        <pattern> hablamos de cine ^</pattern>
+        <template> Si <set name = "topic"> peliculas </set> </template>
+    </category>
+
+        <topic name = "peliculas">
+            <category>
+                <pattern> ^ peliculas ^ </pattern>
+                <template> Ver una buena pelicula refresca nuestras mentes. </template>
+            </category>
+
+         <category>
+             <pattern> ME GUSTA VER LA COMEDIA </pattern>
+            <template> Tambien me gustan las peliculas de comedia. </template>
+        </category>
+
+         </topic>
+    
+     <category> 
+      <pattern>^ DIA ^</pattern>
+      <template> 
+        <random> 
+          <li>Hoy es <date locale="es_ES" timezone="+1" format="%A"/> <date locale="es_ES" timezone="+1" format="%d"/>.</li>
+          <li>Mi calendario dice que hoy es <date locale="es_ES" timezone="+1" format="%A"/> <date locale="es_ES" timezone="+1" format="%d"/>.</li>
+        </random>
+      </template>
+    </category>
+    
+    <category>
+        <pattern>^ cuando es tu cumpleaños ^ </pattern>
+        <template><bot name= "birthday"/></template>
+    </category>
+    
+     <category>
+        <pattern>^ comer ^</pattern>
+        <template>si! que te apetece comer pizza o hamburguesas?</template>
+    </category>
+    <category>
+        <pattern>pizza</pattern>
+        <that>que te apetece comer pizza o hamburguesas</that>
+        <template>ummm que rico, me encantan las pizzas!!!</template>
+    </category>
+    <category>
+        <pattern>hamburguesa</pattern>
+        <that>que te apetece comer pizza o hamburguesas</that>
+        <template>prefiero pizza</template>
+    </category>
+    
+    <category>
+        <pattern>^ carta ^</pattern>
+        <template>
+            <carousel>
+                <card>
+                    <image>https://cdn5.recetasdeescandalo.com/wp-content/uploads/2017/10/Pizza-margarita-con-masa-de-pizza-casera.jpg</image>
+                    <title>margarita</title>
+                    <subtitle>12€ IVA incl.</subtitle>
+                    <button>
+                        <text>pedir margarita</text>
+                        <postback>MPedido</postback>
+                    </button>
+                </card>
+                <card>
+                    <image>https://gastronomiaycia.republica.com/wp-content/photos/pizza_barbacoa2.jpg</image>
+                    <title>barbacoa</title>
+                    <subtitle>14€ IVA incl.</subtitle>
+                    <button>
+                        <text>pedir barbacoa</text>
+                        <postback>BPedido</postback>
+                    </button>
+                </card>
+            </carousel>
+        </template>
+    </category>
+    <category>
+        <pattern>Mpedido</pattern>
+        <template>marchando esa pizza</template>
+    </category>
+    <category>
+        <pattern>Bpedido</pattern>
+        <template>marchando esa pizza</template>
+    </category>
+    
+   
+</aiml>

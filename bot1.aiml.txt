@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+  <category>
+    <pattern>Hablame de *</pattern>
+    <template>
+        <think><set name= "alli"><star/></set></think>
+        Aqui hay alguna información sobre <star/>
+      
+        <button>
+            <text>Clik aqui</text>
+            <url>https://es.wikipedia.org/wiki/<star/></url>
+        </button>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>Hablame de alli </pattern>
+    <template>
+        <condition name= "alli">
+            <li value= "*"><srai>Hablame de <get name= "alli"/></srai></li>
+            <li>Te hablare sobre que </li>
+         </condition>
+    </template>
+  </category>
+ 
+  <category>
+    <pattern>*</pattern>
+    <that>Te hablare sobre que </that>
+    <template>
+        <srai>hablame de <star/></srai>
+    </template>
+  </category> 
+  
+  
+  <category>
+    <pattern>Muestrame un mapa de *</pattern>
+    <template>
+        <think><set name= "alli"><star/></set></think>
+       aqui hay un mapa de <star/>
+        <button>
+            <text>Clik aqui</text>
+            <url>https://www.google.es/maps/place/<star/></url>
+        </button>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>Muestrame un mapa de alli </pattern>
+    <template>
+        <condition name= "alli">
+            <li value= "*"><srai>Muestrame un mapa de <get name= "alli"/></srai></li>
+            <li>Un mapa de donde </li>
+         </condition>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>*</pattern>
+    <that>Un mapa de donde </that>
+    <template>
+        <srai>Muestrame un mapa de <star/></srai>
+    </template>
+  </category> 
+  
+  
+  <category>
+    <pattern>Que tiempo hace en *</pattern>
+    <template>
+        <think><set name= "alli"><star/></set></think>
+       Espero que sea un buen dia en <star/>
+        <button>
+            <text>Clik aqui para el pronostico</text>
+            <url>https://www.eltiempo.es/<star/></url>
+        </button>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>Que tiempo hace alli</pattern>
+    <template>
+        <condition name= "alli">
+            <li value= "*"><srai>Que tiempo hace en <get name= "alli"/></srai></li>
+            <li>El clima de donde </li>
+         </condition>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>*</pattern>
+    <that>El clima de donde </that>
+    <template>
+        <srai>Que tiempo hace en <star/></srai>
+    </template>
+  </category> 
+  
+  <category>
+    <pattern>como es el *</pattern>
+    <template>
+        <think><set name= "alli"><star/></set></think>
+        esto es lo que he encontrado <star/>
+      
+        <button>
+            <text>Clik aqui</text>
+            <url>https://es.wikipedia.org/wiki/<star/></url>
+        </button>
+    </template>
+  </category>
+  
+</aiml>
